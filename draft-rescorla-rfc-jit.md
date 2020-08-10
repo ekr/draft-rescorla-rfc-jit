@@ -118,7 +118,7 @@ the AD can sign off on changes after IESG approval. Moreover, the
 stakes here are quite low because we can always publish a new Version
 that reverts any change.
 
-# Editing
+## Editing
 
 In this model, V.0 is published without any professional editing other
 than what occurs during the normal WG and IESG process. This is
@@ -141,7 +141,7 @@ professional post-publication editing. Because it is easy to mint
 new versions, getting the first version perfect is less important.
 
 
-# IANA Interaction
+## IANA Interaction
 
 Because documents contain IANA considerations sections, these
 considerations MUST be accurate. This can be achieved in one of
@@ -150,14 +150,28 @@ complete or (2) the document can refer to an external registry
 but not have any code points in it. The former seems preferable.
 
 
-
 # Mapping onto the RFC Series {#mapping}
+
+There are at least two ways to map this onto the existing RFC Series,
+which only has one level with each RFC being unchanging.
+
+- Add a new level of Document identifiers with RFCs as versions
+  (e.g., D1234.1 -> RFC 123456)
+
+- Add a new level of Version below RFC (e.g., RFC8446.0, RFC8446.1, etc.),
+  with the main RFC# pointing to the most current version.
+
+Either of these would probably work, and which people prefer to some
+extent depends on their priors. However, it's worth noting that the
+former approach would create a new reference that people would
+generally be pointed to that wasn't RFCs, whereas the second would
+not. In addition, it would start ot burn through the RFC numbers very
+quickly, especially if each erratum creates a new version.
 
 
 # Security Considerations
 
-TODO Security
-
+This document has no impact on security.
 
 # IANA Considerations
 
