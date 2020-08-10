@@ -106,7 +106,8 @@ structure of Document and Version.
 In this design, documents would proceed through the IETF process as
 usual until they got to IESG approval. At the point where they were
 approved by the RFC they would receive a document identifier and the
-initial version (e.g., D.0) would be published.
+initial version would be published, e.g., at
+https://ietf.org/documents/D.0.
 
 Once the initial version was published, new versions could be
 immediately published based on approval from either the responsible
