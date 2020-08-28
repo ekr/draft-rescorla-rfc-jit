@@ -4,8 +4,8 @@
 
 Network Working Group                                        E. Rescorla
 Internet-Draft                                                   Mozilla
-Intended status: Informational                            10 August 2020
-Expires: 11 February 2021
+Intended status: Informational                            28 August 2020
+Expires: 1 March 2021
 
 
                       Just-In-Time RFC Publication
@@ -39,7 +39,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 February 2021.
+   This Internet-Draft will expire on 1 March 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Rescorla                Expires 11 February 2021                [Page 1]
+Rescorla                  Expires 1 March 2021                  [Page 1]
 
 Internet-Draft                   RFC JIT                     August 2020
 
@@ -70,15 +70,19 @@ Table of Contents
    3.  Requirements  . . . . . . . . . . . . . . . . . . . . . . . .   3
    4.  Generic Structure . . . . . . . . . . . . . . . . . . . . . .   3
      4.1.  Editing . . . . . . . . . . . . . . . . . . . . . . . . .   4
-     4.2.  IANA Interaction  . . . . . . . . . . . . . . . . . . . .   4
+     4.2.  IANA Interaction  . . . . . . . . . . . . . . . . . . . .   5
    5.  Mapping onto the RFC Series . . . . . . . . . . . . . . . . .   5
-   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
-   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
-   8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   5
-     8.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
-     8.2.  Informative References  . . . . . . . . . . . . . . . . .   5
-   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .   6
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   6
+   6.  Implications for Existing Organizational Structures . . . . .   5
+     6.1.  The RS(Editor,Advisor)  . . . . . . . . . . . . . . . . .   5
+     6.2.  The RPC . . . . . . . . . . . . . . . . . . . . . . . . .   6
+     6.3.  Toolchains  . . . . . . . . . . . . . . . . . . . . . . .   6
+   7.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
+   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
+   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
+     9.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
+     9.2.  Informative References  . . . . . . . . . . . . . . . . .   7
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .   7
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
 
 1.  Introduction
 
@@ -102,17 +106,19 @@ Table of Contents
    *  The ability to rapidly publish new documents within a series as
       soon as the requisite level of approval has been obtained.
 
-   When put together, these allow us to radically decrease the time to
-   publish while also cheaply addressing issues as they are discovered.
 
 
 
-
-
-Rescorla                Expires 11 February 2021                [Page 2]
+Rescorla                  Expires 1 March 2021                  [Page 2]
 
 Internet-Draft                   RFC JIT                     August 2020
 
+
+   When put together, these allow us to radically decrease the time to
+   publish while also cheaply addressing issues as they are discovered.
+   This document focuses on the IETF Stream as that is the dominant
+   source of RFCs.  However, the contents potentially apply to other
+   streams as well.
 
 2.  Conventions and Definitions
 
@@ -153,6 +159,17 @@ Internet-Draft                   RFC JIT                     August 2020
    might be mapped onto the existing RFC Series.  It makes use of a two-
    level structure of Document and Version.
 
+
+
+
+
+
+
+Rescorla                  Expires 1 March 2021                  [Page 3]
+
+Internet-Draft                   RFC JIT                     August 2020
+
+
    *  Documents refer to the semantics of a given specification and thus
       may appear in multiple Versions.  Each document has a document
       identifier D which is persistent through the life of the document
@@ -161,14 +178,6 @@ Internet-Draft                   RFC JIT                     August 2020
    *  Version refer to specific instances of a Document.  All versions
       of a given document have the same semantics.  Each version has a
       unique version identifier under the document, as in D.V.
-
-
-
-
-Rescorla                Expires 11 February 2021                [Page 3]
-
-Internet-Draft                   RFC JIT                     August 2020
-
 
    In this design, documents would proceed through the IETF process as
    usual until they got to IESG approval.  At the point where they were
@@ -208,6 +217,15 @@ Internet-Draft                   RFC JIT                     August 2020
    professional post-publication editing.  Because it is easy to mint
    new versions, getting the first version perfect is less important.
 
+
+
+
+
+Rescorla                  Expires 1 March 2021                  [Page 4]
+
+Internet-Draft                   RFC JIT                     August 2020
+
+
 4.2.  IANA Interaction
 
    Because documents contain IANA considerations sections, these
@@ -215,16 +233,6 @@ Internet-Draft                   RFC JIT                     August 2020
    ways (1) the document can be held until IANA actions are complete or
    (2) the document can refer to an external registry but not have any
    code points in it.  The former seems preferable.
-
-
-
-
-
-
-Rescorla                Expires 11 February 2021                [Page 4]
-
-Internet-Draft                   RFC JIT                     August 2020
-
 
 5.  Mapping onto the RFC Series
 
@@ -244,17 +252,116 @@ Internet-Draft                   RFC JIT                     August 2020
    not.  In addition, it would start ot burn through the RFC numbers
    very quickly, especially if each erratum creates a new version.
 
-6.  Security Considerations
+6.  Implications for Existing Organizational Structures
+
+   The primary impact of what is proposed here is to lower the stakes
+   for decisions we make about the RFC series because it is possible to
+   publish revised versions that embody different decisions.  For
+   instance, stylistic questions around word choice or layout are more
+   easily changed if we later determine that the wrong decision was
+   made.  This has some implications for the organizational structures
+   we need.
+
+6.1.  The RS(Editor,Advisor)
+
+   This proposal does not necessarily speak one way or the other to
+   whether we have an RFC Series Editor (or Advisor).  However, if post-
+   publication editing - which is enabled by this proposal - is used,
+   then some of the traditional functions of the RSE become less
+   salient.  In particular, at present Internet-Drafts do not really
+   follow the RFC Style Guide except to the extent to which (1) either
+   authors do so or (2) the tools do so automatically.  Thus, if
+   documents are published once they clear the IESG they may not conform
+   to the style guide, though later revisions might do so.  This
+   somewhat reduces the importance of a unified style guide.
+
+
+
+Rescorla                  Expires 1 March 2021                  [Page 5]
+
+Internet-Draft                   RFC JIT                     August 2020
+
+
+   Similarly, because it detaches the question of what makes a document
+   a standard (in this case, first publication as an RFC) from long term
+   strategy for the RFC Series, this proposal would reduce the
+   dependency on the IETF side on extensive RS(E,A) involvement, with
+   the expectation that the IETF would decide on what it needed prior to
+   first publication.  A separate process could then be used to address
+   broader RFC Series issues that crossed all streams.
+
+6.2.  The RPC
+
+   In the structure contemplated here, the RPC would probably do less.
+   Specifically:
+
+   *  Some documents might not be processed by the RPC at all and would
+      simply be published as-is.
+
+   *  We would attempt to minimize the amount of semi-mechanical changes
+      that the RPC made so that it was easy to re-publish.  For
+      instance, in some cases references in the RFC are different from
+      those in the I-D even if both are generated from the DOI.  We
+      would want to automate these transformations.
+
+   *  The RPC would not need to manage AUTH48 in post-publication
+      review; in some versions their proposed edits could be handled
+      like any other edits.
+
+   *  The RPC would not need to do cluster 238-style dependency
+      management and we could just publish documents as soon as they
+      were approved by the IESG with whatever references the IESG
+      considered successful.
+
+   In addition, because the RPC was not on the critical path to
+   standards availability, it would allow for more flexible arrangements
+   with the LLC.  For example, currently when the RPC falls behind their
+   SLA it causes disruption of the whole process.  However, in a post-
+   publication editing setting, the LLC can decide how much editing it
+   wants and tune SLAs and RPC cost appropriately.  Note that it is
+   still possible to run entirely in a pre-publication editing mode,
+   simply not necessary.
+
+6.3.  Toolchains
+
+   Currently we have an odd mix of toolchains in which authors use a
+   variety of input formats (Word, XML, Markdown) but then the RPC works
+   only with XML (this used to be nroff).  A continuous publication
+   structure like this puts pressure on this structure.  We already have
+   this problem now with documents which started in markdown where the
+   effort to product a bis is very large as either the authors need to
+
+
+
+Rescorla                  Expires 1 March 2021                  [Page 6]
+
+Internet-Draft                   RFC JIT                     August 2020
+
+
+   work in XML or backport RFC Ed changes into markdown (an imperfect
+   process) but if revisions are common then that clearly makes things
+   worse.
+
+   There are a number of possible options, including:
+
+   *  A single mandatory toolchain
+
+   *  A small set of allowed toolchains
+
+   In the latter case, the amount of editing that the RPC could do in
+   practice would be somewhat limited.
+
+7.  Security Considerations
 
    This document has no impact on security.
 
-7.  IANA Considerations
+8.  IANA Considerations
 
    This document has no IANA actions.
 
-8.  References
+9.  References
 
-8.1.  Normative References
+9.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -265,28 +372,27 @@ Internet-Draft                   RFC JIT                     August 2020
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-8.2.  Informative References
+9.2.  Informative References
 
    [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
               <https://www.rfc-editor.org/info/rfc8446>.
-
-
-
-
-
-
-
-Rescorla                Expires 11 February 2021                [Page 5]
-
-Internet-Draft                   RFC JIT                     August 2020
-
 
 Acknowledgments
 
    TODO acknowledge.
 
 Author's Address
+
+
+
+
+
+
+Rescorla                  Expires 1 March 2021                  [Page 7]
+
+Internet-Draft                   RFC JIT                     August 2020
+
 
    Eric Rescorla
    Mozilla
@@ -333,4 +439,10 @@ Author's Address
 
 
 
-Rescorla                Expires 11 February 2021                [Page 6]
+
+
+
+
+
+
+Rescorla                  Expires 1 March 2021                  [Page 8]
