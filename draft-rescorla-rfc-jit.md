@@ -57,7 +57,9 @@ publication is centered around two basic ideas:
 
 When put together, these allow us to radically decrease the time to
 publish while also cheaply addressing issues as they are discovered.
-
+This document focuses on the IETF Stream as that is the dominant
+source of RFCs. However, the contents potentially apply to other
+streams as well.
 
 # Conventions and Definitions
 
@@ -168,6 +170,94 @@ former approach would create a new reference that people would
 generally be pointed to that wasn't RFCs, whereas the second would
 not. In addition, it would start ot burn through the RFC numbers very
 quickly, especially if each erratum creates a new version.
+
+# Implications for Existing Organizational Structures
+
+The primary impact of what is proposed here is to lower the stakes
+for decisions we make about the RFC series because it is possible
+to publish revised versions that embody different decisions.
+For instance, stylistic questions around word choice or layout
+are more easily changed if we later determine that the wrong
+decision was made. This has some implications for the organizational
+structures we need.
+
+
+## The RS(Editor,Advisor)
+
+This proposal does not necessarily speak one way or the other to
+whether we have an RFC Series Editor (or Advisor). However,
+if post-publication editing -- which is enabled by this proposal --
+is used, then some of the traditional functions of the RSE
+become less salient. In particular, at present Internet-Drafts
+do not really follow the RFC Style Guide except to the extent
+to which (1) either authors do so or (2) the tools do so automatically.
+Thus, if documents are published once they clear the IESG they
+may not conform to the style guide, though later revisions
+might do so. This somewhat reduces the importance of a unified
+style guide.
+
+Similarly, because it detaches the question of what makes a document
+a standard (in this case, first publication as an RFC) from long
+term strategy for the RFC Series, this proposal would reduce the
+dependency on the IETF side on extensive RS(E,A) involvement,
+with the expectation that the IETF would decide on what it needed
+prior to first publication. A separate process could then be used
+to address broader RFC Series issues that crossed all streams.
+
+
+## The RPC
+
+In the structure contemplated here, the RPC would probably do
+less. Specifically:
+
+- Some documents might not be processed by the RPC at all
+  and would simply be published as-is.
+
+- We would attempt to minimize the amount of semi-mechanical
+  changes that the RPC made so that it was easy to re-publish.
+  For instance, in some cases references in the RFC are
+  different from those in the I-D even if both are generated
+  from the DOI. We would want to automate these transformations.
+
+- The RPC would not need to manage AUTH48 in post-publication
+  review; in some versions their proposed edits could be handled
+  like any other edits.
+
+- The RPC would not need to do cluster 238-style dependency
+  management and we could just publish documents as soon as
+  they were approved by the IESG with whatever references
+  the IESG considered successful.
+
+In addition, because the RPC was not on the critical path
+to standards availability, it would allow for more flexible
+arrangements with the LLC. For example, currently when the
+RPC falls behind their SLA it causes disruption of the whole
+process. However, in a post-publication editing setting,
+the LLC can decide how much editing it wants and tune SLAs
+and RPC cost appropriately. Note that it is still possible
+to run entirely in a pre-publication editing mode, simply
+not necessary.
+
+
+## Toolchains
+
+Currently we have an odd mix of toolchains in which authors use
+a variety of input formats (Word, XML, Markdown) but then the RPC
+works only with XML (this used to be nroff). A continuous publication
+structure like this puts pressure on this structure.
+We already have this problem now with documents
+which started in markdown where the effort to product a bis is
+very large as either the authors need to work in XML or backport
+RFC Ed changes into markdown (an imperfect process) but if
+revisions are common then that clearly makes things worse.
+
+There are a number of possible options, including:
+
+- A single mandatory toolchain
+- A small set of allowed toolchains
+
+In the latter case, the amount of editing that the RPC could
+do in practice would be somewhat limited.
 
 
 # Security Considerations
