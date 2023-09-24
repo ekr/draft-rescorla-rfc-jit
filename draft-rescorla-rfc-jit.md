@@ -187,13 +187,43 @@ are more easily changed if we later determine that the wrong
 decision was made. This has some implications for the organizational
 structures we need.
 
+## IETF Consensus {#consensus-rfc}
 
-## The RS(Editor,Advisor)
+All IETF Stream documents require IETF rough consensus {{?RFC8789}}.
+As with the existing publication process, the combination of
+IETF Last Call and IESG review is intended to ensure that the 
+initial published document as reviewed by the IESG has IETF Consensus.
+The JIT publication process in principal allows for subsequent
+revisions to incorporate material that does not have consensus.
+
+However, it is _already_ possible to introduce non-consensus
+changes in RFCs during AUTH48. Authors routinely make changes to RFCs
+during the AUTH48 process; the RPC does not prevent these changes but
+just requires that substantive changes be approved by the appropriate
+AD. This proposal extends the period when changes can be made past
+initial RFC publication but the risk of non-consensus changes
+being made is mitigated by several factors:
+
+1. Changes are explicitly restricted to those without any semantic
+   content, whereas AUTH48 changes can be semantically meaningful
+   at the ADs discretion.
+   
+1. Any such changes are clearly visible as a diff from the previous
+   version, so this situation is readily detectable.
+   
+1. It is trivial to publish a new version reverting any non-consensus
+   changes.
+
+Together, these changes minimize the risk of semantic changes being
+introduced to published RFCs.
+
+
+## RFC Series Consulting Editor
 
 This proposal does not necessarily speak one way or the other to
-whether we have an RFC Series Editor (or Advisor). However,
+whether we have an RFC Series Consulting Editor (RSCE). However,
 if post-publication editing -- which is enabled by this proposal --
-is used, then some of the traditional functions of the RSE
+is used, then some of the functions of the RSCE
 become less salient. In particular, at present Internet-Drafts
 do not really follow the RFC Style Guide except to the extent
 to which (1) either authors do so or (2) the tools do so automatically.
@@ -205,7 +235,7 @@ style guide.
 Similarly, because it detaches the question of what makes a document
 a standard (in this case, first publication as an RFC) from long
 term strategy for the RFC Series, this proposal would reduce the
-dependency on the IETF side on extensive RS(E,A) involvement,
+dependency on the IETF side on extensive RSCE involvement,
 with the expectation that the IETF would decide on what it needed
 prior to first publication. A separate process could then be used
 to address broader RFC Series issues that crossed all streams.
@@ -263,7 +293,9 @@ There are a number of possible options, including:
 - A small set of allowed toolchains
 
 In the latter case, the amount of editing that the RPC could
-do in practice would be somewhat limited.
+do in practice would be somewhat limited, although presumably
+they could still do copy editing.
+
 
 
 # Security Considerations
