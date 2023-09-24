@@ -151,7 +151,12 @@ Because documents contain IANA considerations sections, these
 considerations MUST be accurate. This can be achieved in one of
 two ways (1) the document can be held until IANA actions are
 complete or (2) the document can refer to an external registry
-but not have any code points in it. The former seems preferable.
+but not have any code points in it. The former seems preferable,
+as it avoids having a published version with incorrect code
+points and the IANA actions can be finished during IETF review.
+Note that it is not necessary for the IANA actions to be perfect,
+as the IANA considerations section and the IANA registry can
+be adjusted after the initial version is published.
 
 
 # Mapping onto the RFC Series {#mapping}
