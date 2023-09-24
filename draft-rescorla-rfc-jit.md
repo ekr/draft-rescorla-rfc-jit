@@ -191,7 +191,7 @@ structures we need.
 
 All IETF Stream documents require IETF rough consensus {{?RFC8789}}.
 As with the existing publication process, the combination of
-IETF Last Call and IESG review is intended to ensure that the 
+IETF Last Call and IESG review is intended to ensure that the
 initial published document as reviewed by the IESG has IETF Consensus.
 The JIT publication process in principal allows for subsequent
 revisions to incorporate material that does not have consensus.
@@ -207,10 +207,10 @@ being made is mitigated by several factors:
 1. Changes are explicitly restricted to those without any semantic
    content, whereas AUTH48 changes can be semantically meaningful
    at the ADs discretion.
-   
+
 1. Any such changes are clearly visible as a diff from the previous
    version, so this situation is readily detectable.
-   
+
 1. It is trivial to publish a new version reverting any non-consensus
    changes.
 
@@ -296,6 +296,10 @@ In the latter case, the amount of editing that the RPC could
 do in practice would be somewhat limited, although presumably
 they could still do copy editing.
 
+In either case, it might be desirable to make the toolchain somewhat
+more strict about enforcing various style requirements in order
+to ensure that the first published version met whatever minimum
+stylistic rules the IETF wishes to enforce.
 
 
 # Security Considerations
