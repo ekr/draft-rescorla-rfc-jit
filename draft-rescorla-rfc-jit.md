@@ -39,15 +39,15 @@ The current RFC publication process is unwieldy and slow. This is a
 poor match for an environment where protocol specifications routinely
 see wide deployment well in advance of IESG approval, let alone RFC
 publication. Despite the long publication time, RFCs also routinely
-contain errors (as an example, TLS 1.3 {{?RFC8446}} currently has >30
+contain errors (as an example, TLS 1.3 {{?RFC8446}} currently has >40
 errata). However, fixing these errors is prohibitively difficult
 as it currently requires publishing a new RFC, which incurs new
 delay, at which point new errors will have accumulated and the
 cycle begins again.
 
-This document proposes a new approach to RFC publication, "just-in-time"
-(JIT) publication, which is designed to address both of these issues. JIT
-publication is centered around two basic ideas:
+This document proposes a new approach to RFC publication, termed
+"just-in-time" (JIT) publication, which is designed to address both of
+these issues. JIT publication is centered around two basic ideas:
 
 - A series of documents which are intended to be semantically identical,
   even though the text may be different.
@@ -109,7 +109,7 @@ In this design, documents would proceed through the IETF process as
 usual until they got to IESG approval. At the point where they were
 approved by the RFC they would receive a document identifier and the
 initial version would be published, e.g., at
-https://ietf.org/documents/D.0.
+https://rfc-editor.org/documents/D.0.
 
 Once the initial version was published, new versions could be
 immediately published based on approval from either the responsible
@@ -117,14 +117,15 @@ Area Director (or perhaps the WG Chair), who would be responsible for
 confirming that the changes did not change the document semantics.
 This allows for errata, etc. to be immediately applied to the document
 in place.  Note that this is consistent with AUTH48 process because
-the AD can sign off on changes after IESG approval. Moreover, the
-stakes here are quite low because we can always publish a new Version
+the AD can sign off on changes after IESG approval (see
+{{consensus-rfc}} for more on this). Moreover, the stakes here are
+quite low because we can always publish a new Version
 that reverts any change.
 
 ## Editing
 
-In this model, V.0 is published without any professional editing other
-than what occurs during the normal WG and IESG process. This is
+In this model, V.0 can be published without any professional editing
+other than what occurs during the normal WG and IESG process. This is
 intended to favor rapid publication over perfection, but is still
 compatible with editing. There are two primary options:
 
@@ -168,7 +169,7 @@ Either of these would probably work, and which people prefer to some
 extent depends on their priors. However, it's worth noting that the
 former approach would create a new reference that people would
 generally be pointed to that wasn't RFCs, whereas the second would
-not. In addition, it would start ot burn through the RFC numbers very
+not. In addition, it would start to burn through the RFC numbers very
 quickly, especially if each erratum creates a new version.
 
 # Implications for Existing Organizational Structures
