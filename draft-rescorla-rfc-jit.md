@@ -170,6 +170,10 @@ being mistakenly made is mitigated by several factors:
 Together, these changes minimize the risk of semantic changes being
 introduced to published RFCs.
 
+As a side effect, JIT publication may also make AUTH48 faster,
+as authors would not need to worry so much about having every
+single sentence be perfect.
+
 
 # Version Publication Logistics
 
@@ -198,9 +202,38 @@ powered by GitHub actions:
 Obviously, these processes need not be based on GitHub, but this example
 illustrates the desired level of automation.
 
-# Publication Format Adjustments
+# Published Version Adjustments
 
-We should
+## Published Versions
+
+With JIT RFC publication, we will have multiple versions of the
+same semantic document, which means that we need some way to
+help readers keep track of the state of the documents. Minimally:
+
+* There needs to be a semantic reference that points to the most recent
+  Version of the document. This reference is stable but the
+  target is updated whenever a new version is published.
+
+* There should be an associated document/page which lists
+  each Version of the document along with a brief summary
+  of the changes (think "git log").
+
+* Each Version of the document should have an affordance which
+  allows the reader to (1) find previous Versions of the document
+  and (2) see what changes were made in this Version
+
+For instance, if we were to use RFC number as the stable reference, then:
+
+- A reader could always get the most recent Version of a document
+  by going to the semantic reference at https://rfc-editor.org/documents/RFC12345
+
+- The individual versions of the documents would be at
+  https://rfc-editor.org/documents/RFC12345.0, https://rfc-editor.org/documents/RFC12345.1,
+  etc.
+
+- The list of all Versions might live at  https://rfc-editor.org/versions/RFC12345
+
+## XML
 
 If we expect people to make changes directly to the published XML,
 it's important that that the XML be as legible as possible. Currently,
@@ -208,7 +241,6 @@ the XML produced by the preptool is significantly harder to read than
 the editorial XML that people work on. Simplifying that XML would
 be valuable in terms of user ergonomics, but can be pursued
 in parallel to the changes proposed here.
-
 
 
 # Security Considerations
