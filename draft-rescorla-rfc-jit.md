@@ -3,10 +3,10 @@ title: "Just-In-Time RFC Publication"
 abbrev: "RFC JIT"
 docname: draft-rescorla-rfc-jit-latest
 category: info
-
+stream: editorial
 ipr: trust200902
-area: General
 keyword: Internet-Draft
+workgroup: "RFC Series Working Group"
 
 stand_alone: yes
 pi: [toc, sortrefs, symrefs]
@@ -28,8 +28,8 @@ informative:
 --- abstract
 
 This document describes a new approach to RFC publication that is
-intended to decrease publication time while also allowing easy
-revisions without re-running the entire RFC publication process.
+intended to allow easy revisions without re-running the entire RFC
+publication process.
 
 --- middle
 
@@ -46,8 +46,8 @@ delay, at which point new errors will have accumulated and the
 cycle begins again.
 
 This document proposes a new approach to RFC publication, termed
-"just-in-time" (JIT) publication, which is designed to address both of
-these issues. JIT publication is centered around two basic ideas:
+"just-in-time" (JIT) publication, which is designed to address this
+issue. JIT publication is centered around two basic ideas:
 
 - A series of documents which are intended to be semantically identical,
   even though the text may be different.
@@ -55,11 +55,10 @@ these issues. JIT publication is centered around two basic ideas:
 - The ability to rapidly publish new documents within a series as soon
   as the requisite level of approval has been obtained.
 
-When put together, these allow us to radically decrease the time to
-publish while also cheaply addressing issues as they are discovered.
-This document focuses on the IETF Stream as that is the dominant
-source of RFCs. However, the contents potentially apply to other
-streams as well.
+When put together, these allow us to cheaply address issues as they
+are discovered. This document focuses on the IETF Stream as that is
+the dominant source of RFCs. However, the contents potentially apply
+to other streams as well.
 
 # Conventions and Definitions
 
@@ -72,10 +71,6 @@ when, and only when, they appear in all capitals, as shown here.
 
 The method in this document is intended to balance a number of requirements.
 
-- Rapid publication: It MUST be possible to publish documents rapidly once their content
-has been approved. This allows for immediate deployment as soon as the
-IETF part of the process is complete.
-
 - Easy updating: Once a document is published it MUST be easy to make
 non-semantic changes (editorial fixes, clarifications, etc.) without
 re-running the whole process.
@@ -85,9 +80,6 @@ of a document (i.e., the exact bits).
 
 - Semantic References: It MUST be possible to reference a document as a
 semantic entity, including whatever editorial updates have been made.
-
-- Professional Editing: It MUST be possible to have professional editing
-for documents.
 
 
 # Generic Structure
@@ -101,62 +93,28 @@ structure of Document and Version.
   thus may appear in multiple Versions. Each document has
   a document identifier D which is persistent through the life of the document
   and refers to the latest Version.
-- Version refer to specific instances of a Document. All versions
+- Versions refer to specific instances of a Document. All versions
   of a given document have the same semantics. Each version has
-  a unique version identifier under the document, as in D.V.
+  a unique version identifier under the document, as in D.V, indicating
+  version V of document D.
 
-In this design, documents would proceed through the IETF process as
-usual until they got to IESG approval. At the point where they were
-approved by the RFC they would receive a document identifier and the
+In this design, documents would proceed through the process as
+usual until they were first published as an RFC. At the point where they were
+published by the RPC they would receive a document identifier and the
 initial version would be published, e.g., at
 https://rfc-editor.org/documents/D.0.
 
 Once the initial version was published, new versions could be
-immediately published based on approval from either the responsible
+immediately published based on approval from the
 Area Director (or perhaps the WG Chair), who would be responsible for
 confirming that the changes did not change the document semantics.
-This allows for errata, etc. to be immediately applied to the document
-in place.  Note that this is consistent with AUTH48 process because
+
+This process allows for errata, etc. to be immediately applied to the document
+in place. Note that this is consistent with AUTH48 process because
 the AD can sign off on changes after IESG approval (see
 {{consensus-rfc}} for more on this). Moreover, the stakes here are
 quite low because we can always publish a new Version
-that reverts any change.
-
-## Editing
-
-In this model, V.0 can be published without any professional editing
-other than what occurs during the normal WG and IESG process. This is
-intended to favor rapid publication over perfection, but is still
-compatible with editing. There are two primary options:
-
-- Post-publication editing: The document can be edited after
-  publication with the edits being folded into new versions. This
-  will happen naturally to some extent with active documents
-  as readers find issues, but it also provides a way for
-  professional editing to be fed in.
-
-- Pre-publication editing: In cases where the IESG deems a document
-  to be particularly hard to read, it can be sent for initial editing
-  prior to publication.
-
-It is also possible to do a combination of these, with some level
-of pre-publication editing followed by subsequent volunteer and
-professional post-publication editing. Because it is easy to mint
-new versions, getting the first version perfect is less important.
-
-
-## IANA Interaction
-
-Because documents contain IANA considerations sections, these
-considerations MUST be accurate. This can be achieved in one of
-two ways (1) the document can be held until IANA actions are
-complete or (2) the document can refer to an external registry
-but not have any code points in it. The former seems preferable,
-as it avoids having a published version with incorrect code
-points and the IANA actions can be finished during IETF review.
-Note that it is not necessary for the IANA actions to be perfect,
-as the IANA considerations section and the IANA registry can
-be adjusted after the initial version is published.
+that reverts any change which has been inappropriately applied.
 
 
 # Mapping onto the RFC Series {#mapping}
@@ -177,24 +135,16 @@ generally be pointed to that wasn't RFCs, whereas the second would
 not. In addition, it would start to burn through the RFC numbers very
 quickly, especially if each erratum creates a new version.
 
-# Implications for Existing Organizational Structures
-
-The primary impact of what is proposed here is to lower the stakes
-for decisions we make about the RFC series because it is possible
-to publish revised versions that embody different decisions.
-For instance, stylistic questions around word choice or layout
-are more easily changed if we later determine that the wrong
-decision was made. This has some implications for the organizational
-structures we need.
-
-## IETF Consensus {#consensus-rfc}
+# IETF Consensus {#consensus-rfc}
 
 All IETF Stream documents require IETF rough consensus {{?RFC8789}}.
-As with the existing publication process, the combination of
-IETF Last Call and IESG review is intended to ensure that the
-initial published document as reviewed by the IESG has IETF Consensus.
-The JIT publication process in principal allows for subsequent
-revisions to incorporate material that does not have consensus.
+As with the existing publication process, the combination of IETF Last
+Call and IESG review is intended to ensure that the initial published
+document as reviewed by the IESG has IETF Consensus. The JIT
+publication process in principle allows for subsequent revisions to
+incorporate material that does not have consensus. This would
+be a process violation because ADs are supposed to only approve
+non-semantic changes, but of course ADs might make mistakes.
 
 However, it is _already_ possible to introduce non-consensus
 changes in RFCs during AUTH48. Authors routinely make changes to RFCs
@@ -202,14 +152,17 @@ during the AUTH48 process; the RPC does not prevent these changes but
 just requires that substantive changes be approved by the appropriate
 AD. This proposal extends the period when changes can be made past
 initial RFC publication but the risk of non-consensus changes
-being made is mitigated by several factors:
+being mistakenly made is mitigated by several factors:
 
 1. Changes are explicitly restricted to those without any semantic
    content, whereas AUTH48 changes can be semantically meaningful
-   at the ADs discretion.
+   at the ADs discretion. The RPC could detect at least some
+   of these cases, as they do now.
 
 1. Any such changes are clearly visible as a diff from the previous
-   version, so this situation is readily detectable.
+   version, so this situation is readily detectable. One could
+   imagine having a short "objection period" between approval
+   and publication to allow for incorrect changes to be detected.
 
 1. It is trivial to publish a new version reverting any non-consensus
    changes.
@@ -218,93 +171,52 @@ Together, these changes minimize the risk of semantic changes being
 introduced to published RFCs.
 
 
-## RFC Series Consulting Editor
+# Version Publication Logistics
 
-This proposal does not necessarily speak one way or the other to
-whether we have an RFC Series Consulting Editor (RSCE). However,
-if post-publication editing -- which is enabled by this proposal --
-is used, then some of the functions of the RSCE
-become less salient. In particular, at present Internet-Drafts
-do not really follow the RFC Style Guide except to the extent
-to which (1) either authors do so or (2) the tools do so automatically.
-Thus, if documents are published once they clear the IESG they
-may not conform to the style guide, though later revisions
-might do so. This somewhat reduces the importance of a unified
-style guide.
+Once the RPC has published the initial version of an RFC, it should be
+trivial to make a change and re-spin the document without significant
+work by the RPC.  Ideally, there would be a simple process in
+which the changes were proposed, approved by the ADs, vetted by the
+RPC and then mechanically published as a new RFC version. This should only require
+changing the specific text, rather than metadata, etc., which should
+all change automatically.
 
-Similarly, because it detaches the question of what makes a document
-a standard (in this case, first publication as an RFC) from long
-term strategy for the RFC Series, this proposal would reduce the
-dependency on the IETF side on extensive RSCE involvement,
-with the expectation that the IETF would decide on what it needed
-prior to first publication. A separate process could then be used
-to address broader RFC Series issues that crossed all streams.
+For readers familiar with GitHub, one could imagine this a workflow
+powered by GitHub actions:
 
+1. Once the RFC is published, the XML is published on GitHub
+  (e.g., in a repo containing the XML for every RFC).
+1. The proposed change is submitted as a pull request to
+   the XML.
+1. A GitHub action automatically generates the resulting
+    publication formats (HTML, TXT, PDF) for review.
+1. The AD approves the pull request.
+1. Upon AD approval and verification that no inappropriate changes
+  have been made, the RPC merges the pull request.
+1. A GitHub action publishes the RFC Version.
 
-## The RPC
+Obviously, these processes need not be based on GitHub, but this example
+illustrates the desired level of automation.
 
-In the structure contemplated here, the RPC would probably do
-less. Specifically:
+# Publication Format Adjustments
 
-- Some documents might not be processed by the RPC at all
-  and would simply be published as-is.
+We should
 
-- We would attempt to minimize the amount of semi-mechanical
-  changes that the RPC made so that it was easy to re-publish.
-  For instance, in some cases references in the RFC are
-  different from those in the I-D even if both are generated
-  from the DOI. We would want to automate these transformations.
+If we expect people to make changes directly to the published XML,
+it's important that that the XML be as legible as possible. Currently,
+the XML produced by the preptool is significantly harder to read than
+the editorial XML that people work on. Simplifying that XML would
+be valuable in terms of user ergonomics, but can be pursued
+in parallel to the changes proposed here.
 
-- The RPC would not need to manage AUTH48 in post-publication
-  review; in some versions their proposed edits could be handled
-  like any other edits.
-
-- The RPC would not need to do cluster 238-style dependency
-  management and we could just publish documents as soon as
-  they were approved by the IESG with whatever references
-  the IESG considered successful.
-
-In addition, because the RPC was not on the critical path
-to standards availability, it would allow for more flexible
-arrangements with the LLC. For example, currently when the
-RPC falls behind their SLA it causes disruption of the whole
-process. However, in a post-publication editing setting,
-the LLC can decide how much editing it wants and tune SLAs
-and RPC cost appropriately. Note that it is still possible
-to run entirely in a pre-publication editing mode, simply
-not necessary.
-
-
-## Toolchains
-
-Currently we have an odd mix of toolchains in which authors use
-a variety of input formats (Word, XML, Markdown) but then the RPC
-works only with XML (this used to be nroff). A continuous publication
-structure like this puts pressure on this structure.
-We already have this problem now with documents
-which started in markdown where the effort to product a bis is
-very large as either the authors need to work in XML or backport
-RFC Ed changes into markdown (an imperfect process) but if
-revisions are common then that clearly makes things worse.
-
-There are a number of possible options, including:
-
-- A single mandatory toolchain
-- A small set of allowed toolchains
-
-In the latter case, the amount of editing that the RPC could
-do in practice would be somewhat limited, although presumably
-they could still do copy editing.
-
-In either case, it might be desirable to make the toolchain somewhat
-more strict about enforcing various style requirements in order
-to ensure that the first published version met whatever minimum
-stylistic rules the IETF wishes to enforce.
 
 
 # Security Considerations
 
-This document has no impact on security.
+This document in theory might make it possible to make semantically
+relevant changes to RFCs post-publication, which could have
+security implications. In the event that this
+happens, it is straightforward to revert these changes.
 
 # IANA Considerations
 
